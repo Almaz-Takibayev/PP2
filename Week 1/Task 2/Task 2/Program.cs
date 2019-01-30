@@ -23,7 +23,7 @@ namespace Task_2
         //Эта функция выводит все элементы класса Student и год обучения увеличивается на 1 год
         public void Print()
         {
-            Console.WriteLine(this.name + " " + this.ID + " " + (this.year + 1));
+            Console.WriteLine("Student's name: " + this.name + Environment.NewLine + "Student's ID: " + this.ID + Environment.NewLine + "Student's year of study: " + (this.year + 1));
         }
     }
 
