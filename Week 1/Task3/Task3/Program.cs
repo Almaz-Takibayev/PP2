@@ -8,6 +8,7 @@ namespace Task3
 {
     class Program
     {
+        //функция которая выводит число массива 2 раза через пробел
         static void Print(int n)
         {
             for(int i=0; i<2; i++)
