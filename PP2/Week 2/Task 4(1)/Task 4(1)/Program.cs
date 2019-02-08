@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task_4
+namespace Task_4_1_
 {
     class Program
     {
@@ -32,12 +32,7 @@ namespace Task_4
 
             if (!File.Exists(@"C:\Week2\Shark\Task4.txt"))
             {
-                File.Copy(TheFirstFile, TheSecondFile, true);
-            }
-
-            if (File.Exists(@"C:\Week2\Task4.txt"))
-            {
-                File.Delete(@"C:\Week2\Task4.txt");
+                File.Move(@"C:\Week2\Task4.txt", @"C:\Week2\Shark\Task4.txt");
             }
         }
     }
