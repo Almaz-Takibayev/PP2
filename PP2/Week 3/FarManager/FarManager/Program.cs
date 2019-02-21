@@ -65,7 +65,7 @@ namespace FarManager
 
     class Program
     {
-        static bool pathExists(string path, int mode)
+        static bool PathExists(string path, int mode)
         {
             if((mode == 1 && new DirectoryInfo(path).Exists) || (mode == 2 && new FileInfo(path).Exists))
             {
@@ -269,7 +269,7 @@ namespace FarManager
                         Console.WriteLine(fullname);
                         string newname = Console.ReadLine();
 
-                        while(newname.Length==0 || pathExists(fullname + newname, selectedMode))
+                        while(newname.Length==0 || PathExists(fullname + newname, selectedMode))
                         {
                             Console.WriteLine("This directory was created, Enter the new one");
                             newname = Console.ReadLine();
