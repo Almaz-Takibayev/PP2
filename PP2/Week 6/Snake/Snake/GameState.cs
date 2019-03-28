@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Snake
 {
@@ -26,8 +28,7 @@ namespace Snake
             Console.SetBufferSize(40, 42);
             Console.CursorVisible = false;
             player.SetName();
-            player.Name = Console.ReadKey().ToString();
-            
+
         }
 
         public void Draw()
@@ -77,10 +78,25 @@ namespace Snake
                         worm.dir = Worm.Direction.Left;
                     }
                     break;
+                case ConsoleKey.Spacebar:
+                    Serialize(player);
+                    break;
             }
 
             CheckCollision();
-            
+
+        }
+
+        private void Serialize(Player player)
+        {
+            XmlSerializer xmlSerializer1 = new XmlSerializer(typeof(Player));
+            string fileName = string.Format("{0}.xml", player.Name);
+            string path = @"C:\Users\User\Desktop\PP2\PP2\Week 6\Snake\Snake\bin\Debug\ScoreTable";
+            string directory = Path.Combine(path, fileName);
+            using (FileStream fs = new FileStream(directory, FileMode.Create, FileAccess.Write))
+            {
+                xmlSerializer1.Serialize(fs, player);
+            }
         }
 
         private void CheckCollision()
@@ -107,7 +123,7 @@ namespace Snake
                 else if (scoreLevel.Score == 100)
                 {
                     wall.Clear();
-                    
+
                     LevelNumber = 2;
                     scoreLevel.Level = 3;
                     wall = new Wall('#', LevelNumber);
