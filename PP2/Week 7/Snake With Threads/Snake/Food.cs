@@ -17,7 +17,9 @@ namespace Snake
             GenerateLocation();
         }
 
-        private void GenerateLocation()
+        public Food() : base() { }
+
+        public void GenerateLocation()
         {
             Point p = new Point(10, 35);
             body.Add(p);
@@ -34,7 +36,6 @@ namespace Snake
             {
                 p = new Point(random.Next(1, 40), random.Next(1, 40));
             }
-            
             body.Add(p);
         }
 

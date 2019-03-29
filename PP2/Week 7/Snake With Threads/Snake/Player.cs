@@ -41,6 +41,7 @@ namespace Snake
         {
             this.name = name;
             this.score = score;
+
         }
 
         
@@ -48,7 +49,7 @@ namespace Snake
 
         public void Draw()
         {
-            Console.SetCursorPosition(32, 0);
+            Console.SetCursorPosition(35, 0);
             Console.Write(name);
         }
 
