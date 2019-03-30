@@ -12,7 +12,7 @@ namespace Snake
 
     public class GameState
     {
-        Timer timer = new Timer(120);
+        Timer timer = new Timer(150);
 
         //public bool gameOver = false;
 
