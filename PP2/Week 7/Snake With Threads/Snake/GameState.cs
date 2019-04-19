@@ -12,12 +12,12 @@ namespace Snake
 
     public class GameState
     {
-        Timer timer = new Timer(150);
+        Timer timer = new Timer(10);
 
         //public bool gameOver = false;
-
-        Worm worm = new Worm('O');
-        Food food = new Food('@');
+        ConsoleColor c = ConsoleColor.Green;
+        Worm worm = new Worm('O', ConsoleColor.Green);
+        Food food = new Food('@', ConsoleColor.Green );
         Wall wall;
         //public Player player = new Player();
         public ScoreLevel scoreLevel = new ScoreLevel();
@@ -37,7 +37,7 @@ namespace Snake
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
 
-            wall = new Wall('#', LevelNumber);
+            wall = new Wall('#', LevelNumber, c);
             wall.Draw();
             food.GenerateLocation(worm.body, wall.body);
             food.Draw();
@@ -157,7 +157,7 @@ namespace Snake
                     wall.Clear();
                     LevelNumber = 2;
                     scoreLevel.Level = 2;
-                    wall = new Wall('#', LevelNumber);
+                    wall = new Wall('#', LevelNumber, c);
                     wall.Draw();
                     
                 }
@@ -167,7 +167,7 @@ namespace Snake
 
                     LevelNumber = 3;
                     scoreLevel.Level = 3;
-                    wall = new Wall('#', LevelNumber);
+                    wall = new Wall('#', LevelNumber, c);
                     wall.Draw();
                 }
                 scoreLevel.Draw();

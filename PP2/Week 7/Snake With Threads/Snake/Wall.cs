@@ -19,7 +19,7 @@ namespace Snake
 
         FileSystemInfo[] levels = new DirectoryInfo(@"C:\Users\User\Desktop\PP2\PP2\Week 7\Snake With Threads\Snake\Levels").GetFileSystemInfos();
 
-        public Wall(char sign, int levelNumber) : base(sign)
+        public Wall(char sign, int levelNumber, ConsoleColor c) : base(sign, c)
         {
             LoadLevel(levelNumber);
         }

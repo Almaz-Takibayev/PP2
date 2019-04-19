@@ -8,11 +8,11 @@ namespace Snake
 {
     class Food : GameObject
     {
-        public Food(char sign, List<Point> worm, List<Point> wall) : base(sign)
+        public Food(char sign, List<Point> worm, List<Point> wall, ConsoleColor c) : base(sign, c)
         {
             GenerateLocation(worm, wall);
         }
-        public Food(char sign) : base(sign)
+        public Food(char sign, ConsoleColor c) : base(sign, c)
         {
             GenerateLocation();
         }

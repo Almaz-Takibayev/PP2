@@ -32,7 +32,7 @@ namespace Snake
         public Worm() : base() { }
 
         public Direction dir;
-        public Worm(char sign) : base(sign)
+        public Worm(char sign, ConsoleColor c) : base(sign, c)
         {
             body.Add(new Point(20, 20));
             dir = Direction.Stop;
